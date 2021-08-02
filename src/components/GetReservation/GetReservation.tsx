@@ -38,31 +38,45 @@ const GetReservation: FC = () => {
 };
 
 const GetReservationStyled = styled.div`
-  padding: ${({ theme }) => `${theme.sizes.md(32)}vw ${theme.sizes.md(92)}vw`};
+  padding: ${({ theme }) => `${theme.sizes.sm(32)}vw ${theme.sizes.sm(92)}vw`};
   box-shadow: 0px 0px 14px 1px ${({ theme }) => theme.colors.grey3};
   background: ${({ theme }) => theme.colors.white};
   position: absolute;
-  transform: translateY(100%);
+  transform: translateY(30%);
   left: 0;
   right: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr) auto;
+  grid-gap: ${({ theme }) => theme.sizes.sm(10)}vw;
+  grid-template-columns: 1fr;
   justify-content: center;
+
+  ${({ theme }) => theme.media(1)} {
+    grid-template-columns: repeat(3, 1fr) auto;
+    grid-gap: ${({ theme }) => theme.sizes.md(16)}vw;
+    padding: ${({ theme }) =>
+      `${theme.sizes.md(32)}vw ${theme.sizes.md(92)}vw`};
+    transform: translateY(100%);
+  }
 
   .column {
     display: flex;
     flex-direction: column;
-    margin-right: ${({ theme }) => theme.sizes.md(16)}vw;
 
     &:last-child {
       justify-content: end;
     }
 
     label {
-      font-size: ${({ theme }) => theme.sizes.md(13)}vw;
-      line-height: ${({ theme }) => theme.sizes.md(20)}vw;
-      margin-bottom: ${({ theme }) => theme.sizes.md(5)}vw;
+      font-size: ${({ theme }) => theme.sizes.sm(13)}vw;
+      line-height: ${({ theme }) => theme.sizes.sm(20)}vw;
+      margin-bottom: ${({ theme }) => theme.sizes.sm(5)}vw;
       color: ${({ theme }) => theme.colors.blue};
+
+      ${({ theme }) => theme.media(1)} {
+        font-size: ${({ theme }) => theme.sizes.md(13)}vw;
+        line-height: ${({ theme }) => theme.sizes.md(20)}vw;
+        margin-bottom: ${({ theme }) => theme.sizes.md(5)}vw;
+      }
     }
   }
 `;
