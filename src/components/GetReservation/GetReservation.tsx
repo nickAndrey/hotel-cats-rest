@@ -39,11 +39,15 @@ const GetReservation: FC = () => {
 
 const GetReservationStyled = styled.div`
   padding: ${({ theme }) => `${theme.sizes.md(32)}vw ${theme.sizes.md(92)}vw`};
-  display: flex;
   box-shadow: 0px 0px 14px 1px ${({ theme }) => theme.colors.grey3};
   background: ${({ theme }) => theme.colors.white};
   position: absolute;
   transform: translateY(100%);
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  justify-content: center;
 
   .column {
     display: flex;
@@ -72,7 +76,7 @@ const Button = styled.button`
   background: ${({ theme }) => theme.colors.blue};
   padding: ${({ theme }) => theme.sizes.md(21)}vw;
   border: none;
-  cursor: pointer; 
+  cursor: pointer;
 `;
 
 export default GetReservation;

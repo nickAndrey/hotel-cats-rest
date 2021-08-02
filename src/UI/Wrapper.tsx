@@ -7,6 +7,7 @@ const WrapperStyled = styled.div`
   width: 100%;
   max-width: 80%;
   margin: 0 auto;
+  position: relative;
 
   ${({ theme }) => theme.media(1)} {
       max-width: ${({theme: {sizes}}) => sizes.md(1088)}vw;
