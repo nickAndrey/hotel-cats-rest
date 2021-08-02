@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
+import Button from '../../UI/Button';
 import { SendIcon } from '../../UI/icons/SendIcon';
 import Wrapper from '../../UI/Wrapper';
 
@@ -28,9 +29,7 @@ const GetReservation: FC = () => {
           <Input type='text' placeholder='rooms' id='id_rooms' />
         </div>
         <div className='column'>
-          <Button>
-            <SendIcon size={14} />
-          </Button>
+          <Button withIcon={true} icon={<SendIcon size={14} />} />
         </div>
       </GetReservationStyled>
     </Wrapper>
@@ -84,13 +83,6 @@ const GetReservationStyled = styled.div`
 const Input = styled.input`
   padding: ${({ theme }) => `${theme.sizes.md(20)}vw ${theme.sizes.md(16)}vw`};
   border: 1px solid ${({ theme }) => theme.colors.grey5};
-`;
-
-const Button = styled.button`
-  background: ${({ theme }) => theme.colors.blue};
-  padding: ${({ theme }) => theme.sizes.md(21)}vw;
-  border: none;
-  cursor: pointer;
 `;
 
 export default GetReservation;
