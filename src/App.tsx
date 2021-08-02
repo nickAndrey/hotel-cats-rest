@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import { FC } from 'react';
+import { ThemeProvider } from '@emotion/react';
 import './App.css';
+import { theme } from './UI/theme';
+import Banner from './components/Banner/Banner';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: FC = () => (
+  <ThemeProvider theme={theme}>
+    <Banner
+      bigText='The best hotel you will ever need'
+      smallText='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
+    />
+  </ThemeProvider>
+);
 
 export default App;
