@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 
 interface IButton {
-  withIcon: boolean;
+  withIcon?: boolean;
   icon?: any;
   innerText?: string;
 }

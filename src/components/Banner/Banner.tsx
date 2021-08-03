@@ -30,7 +30,9 @@ const Banner: FC<IBanner> = ({ bigText, smallText }) => {
           <p className='small-text'>{smallText}</p>
         </TextWrapperStyled>
       </Wrapper>
-      <GetReservation />
+      <GetReservationWrapperStyled>
+        <GetReservation />
+      </GetReservationWrapperStyled>
     </BannerStyled>
   );
 };
@@ -64,7 +66,7 @@ const TextWrapperStyled = styled.div`
     font-size: ${({ theme }) => theme.sizes.sm(31)}vw;
     line-height: ${({ theme }) => theme.sizes.sm(36)}vw;
     color: ${({ theme }) => theme.colors.white};
-    font-weight: 900;
+    font-weight: 800;
     margin: 0;
 
     ${({ theme }) => theme.media(1)} {
@@ -83,6 +85,17 @@ const TextWrapperStyled = styled.div`
       line-height: ${({ theme }) => theme.sizes.md(21)}vw;
       margin: ${({ theme }) => theme.sizes.md(21)}vw 0 0 0;
     }
+  }
+`;
+
+const GetReservationWrapperStyled = styled.div`
+  position: absolute;
+  transform: translateY(30%);
+  left: 0;
+  right: 0;
+
+  ${({ theme }) => theme.media(1)} {
+    transform: translateY(100%);
   }
 `;
 

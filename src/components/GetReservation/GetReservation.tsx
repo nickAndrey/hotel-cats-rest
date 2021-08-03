@@ -40,10 +40,6 @@ const GetReservationStyled = styled.div`
   padding: ${({ theme }) => `${theme.sizes.sm(32)}vw ${theme.sizes.sm(92)}vw`};
   box-shadow: 0px 0px 14px 1px ${({ theme }) => theme.colors.grey3};
   background: ${({ theme }) => theme.colors.white};
-  position: absolute;
-  transform: translateY(30%);
-  left: 0;
-  right: 0;
   display: grid;
   grid-gap: ${({ theme }) => theme.sizes.sm(10)}vw;
   grid-template-columns: 1fr;
@@ -54,7 +50,7 @@ const GetReservationStyled = styled.div`
     grid-gap: ${({ theme }) => theme.sizes.md(16)}vw;
     padding: ${({ theme }) =>
       `${theme.sizes.md(32)}vw ${theme.sizes.md(92)}vw`};
-    transform: translateY(100%);
+    
   }
 
   .column {
