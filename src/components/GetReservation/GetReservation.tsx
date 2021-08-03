@@ -2,37 +2,30 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 import Button from '../../UI/Button';
 import { SendIcon } from '../../UI/icons/SendIcon';
-import Wrapper from '../../UI/Wrapper';
 
 const GetReservation: FC = () => {
   return (
-    <Wrapper>
-      <GetReservationStyled>
-        <div className='column'>
-          <label htmlFor='id_check_in_date'>Check In Date</label>
-          <Input
-            type='text'
-            placeholder='check in date'
-            id='id_check_in_date'
-          />
-        </div>
-        <div className='column'>
-          <label htmlFor='id_check_out_date'>Check Out Date</label>
-          <Input
-            type='text'
-            placeholder='check out date'
-            id='id_check_out_date'
-          />
-        </div>
-        <div className='column'>
-          <label htmlFor='id_rooms'>Rooms</label>
-          <Input type='text' placeholder='rooms' id='id_rooms' />
-        </div>
-        <div className='column'>
-          <Button withIcon={true} icon={<SendIcon size={14} />} />
-        </div>
-      </GetReservationStyled>
-    </Wrapper>
+    <GetReservationStyled>
+      <div className='column'>
+        <label htmlFor='id_check_in_date'>Check In Date</label>
+        <Input type='text' placeholder='check in date' id='id_check_in_date' />
+      </div>
+      <div className='column'>
+        <label htmlFor='id_check_out_date'>Check Out Date</label>
+        <Input
+          type='text'
+          placeholder='check out date'
+          id='id_check_out_date'
+        />
+      </div>
+      <div className='column'>
+        <label htmlFor='id_rooms'>Rooms</label>
+        <Input type='text' placeholder='rooms' id='id_rooms' />
+      </div>
+      <div className='column'>
+        <Button withIcon={true} icon={<SendIcon size={14} />} />
+      </div>
+    </GetReservationStyled>
   );
 };
 
@@ -50,7 +43,6 @@ const GetReservationStyled = styled.div`
     grid-gap: ${({ theme }) => theme.sizes.md(16)}vw;
     padding: ${({ theme }) =>
       `${theme.sizes.md(32)}vw ${theme.sizes.md(92)}vw`};
-    
   }
 
   .column {

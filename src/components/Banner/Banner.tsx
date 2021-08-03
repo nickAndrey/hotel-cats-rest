@@ -10,10 +10,6 @@ interface IBanner {
   smallText: string;
 }
 
-interface IBannerStyled {
-  background?: string;
-}
-
 const Banner: FC<IBanner> = ({ bigText, smallText }) => {
   return (
     <BannerStyled>
@@ -29,15 +25,15 @@ const Banner: FC<IBanner> = ({ bigText, smallText }) => {
           <h2 className='big-text'>{bigText}</h2>
           <p className='small-text'>{smallText}</p>
         </TextWrapperStyled>
+        <GetReservationWrapperStyled>
+          <GetReservation />
+        </GetReservationWrapperStyled>
       </Wrapper>
-      <GetReservationWrapperStyled>
-        <GetReservation />
-      </GetReservationWrapperStyled>
     </BannerStyled>
   );
 };
 
-const BannerStyled = styled.div<IBannerStyled>`
+const BannerStyled = styled.div`
   position: relative;
   padding-bottom: ${({ theme }) => theme.sizes.sm(209)}vw;
 
