@@ -13,7 +13,7 @@ export const theme: Theme = {
   colors: {
     grey: '#F8F8F8',
     grey2: '#D1D1D1',
-    grey3: '#B1B1B1',
+    grey3: 'rgba(0, 0, 0, 0.1)',
     grey4: '#EEEEEE',
     grey5: '#EBEBEB',
     blue: '#5863F8',
