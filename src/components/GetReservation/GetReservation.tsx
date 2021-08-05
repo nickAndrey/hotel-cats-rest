@@ -3,31 +3,25 @@ import { FC } from 'react';
 import Button from '../../UI/Button';
 import { SendIcon } from '../../UI/icons/SendIcon';
 
-const GetReservation: FC = () => {
-  return (
-    <GetReservationStyled>
-      <div className='column'>
-        <label htmlFor='id_check_in_date'>Check In Date</label>
-        <Input type='text' placeholder='check in date' id='id_check_in_date' />
-      </div>
-      <div className='column'>
-        <label htmlFor='id_check_out_date'>Check Out Date</label>
-        <Input
-          type='text'
-          placeholder='check out date'
-          id='id_check_out_date'
-        />
-      </div>
-      <div className='column'>
-        <label htmlFor='id_rooms'>Rooms</label>
-        <Input type='text' placeholder='rooms' id='id_rooms' />
-      </div>
-      <div className='column'>
-        <Button withIcon={true} icon={<SendIcon size={14} />} />
-      </div>
-    </GetReservationStyled>
-  );
-};
+const GetReservation: FC = () => (
+  <GetReservationStyled>
+    <div className='column'>
+      <label htmlFor='id_check_in_date'>Check In Date</label>
+      <Input type='text' placeholder='check in date' id='id_check_in_date' />
+    </div>
+    <div className='column'>
+      <label htmlFor='id_check_out_date'>Check Out Date</label>
+      <Input type='text' placeholder='check out date' id='id_check_out_date' />
+    </div>
+    <div className='column'>
+      <label htmlFor='id_rooms'>Rooms</label>
+      <Input type='text' placeholder='rooms' id='id_rooms' />
+    </div>
+    <div className='column'>
+      <Button icon={<SendIcon size={14} />} />
+    </div>
+  </GetReservationStyled>
+);
 
 const GetReservationStyled = styled.div`
   padding: ${({ theme }) => `${theme.sizes.sm(32)}vw ${theme.sizes.sm(92)}vw`};

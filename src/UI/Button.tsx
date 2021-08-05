@@ -1,28 +1,39 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
 
-interface IButton {
-  withIcon?: boolean;
+type ButtonType = {
   icon?: any;
-  innerText?: string;
-}
+  iconPos?: 'left' | 'right';
+};
 
-const Button: FC<IButton> = ({ withIcon, icon, innerText }) => (
-  <ButtonStyled>
-    {withIcon && icon}
-    {innerText}
+const Button: FC<ButtonType> = ({ icon, children, iconPos }) => (
+  <ButtonStyled iconPos={iconPos}>
+    {icon && icon}
+    <span className='text-content'>{children}</span>
   </ButtonStyled>
 );
 
-const ButtonStyled = styled.button`
+const ButtonStyled = styled.button<{ iconPos: ButtonType['iconPos'] }>`
   background: ${({ theme }) => theme.colors.blue};
-  padding: ${({ theme }) => theme.sizes.sm(10)}vw;
+  color: ${({ theme }) => theme.colors.white};
+  padding: ${({ theme }) => theme.sizes.sm(15)}vw;
   border: none;
   cursor: pointer;
 
   ${({ theme }) => theme.media(1)} {
     padding: ${({ theme: { sizes } }) => sizes.md(21)}vw;
   }
+
+  .text-content {
+    margin: 0
+      ${({ iconPos }) =>
+        iconPos ? (iconPos === 'left' ? '0 0 10px' : '10px 0 0') : 0};
+  }
+
+  display: flex;
+  align-items: center;
+  flex-direction: ${({ iconPos }) =>
+    iconPos === 'left' ? 'row' : 'row-reverse'};
 
   font-family: inherit;
   font-size: 100%;

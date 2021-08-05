@@ -10,28 +10,26 @@ interface IBanner {
   smallText: string;
 }
 
-const Banner: FC<IBanner> = ({ bigText, smallText }) => {
-  return (
-    <BannerStyled>
-      <img
-        className='image'
-        src={bannerBackground}
-        alt='The best hotel you will ever need'
-      />
-      <Wrapper>
-        <Menu />
-        <h1 className='visually-hidden'>hotel you ever need</h1>
-        <TextWrapperStyled>
-          <h2 className='big-text'>{bigText}</h2>
-          <p className='small-text'>{smallText}</p>
-        </TextWrapperStyled>
-        <GetReservationWrapperStyled>
-          <GetReservation />
-        </GetReservationWrapperStyled>
-      </Wrapper>
-    </BannerStyled>
-  );
-};
+const Banner: FC<IBanner> = ({ bigText, smallText }) => (
+  <BannerStyled>
+    <img
+      className='image'
+      src={bannerBackground}
+      alt='The best hotel you will ever need'
+    />
+    <Wrapper>
+      <Menu />
+      <h1 className='visually-hidden'>hotel you ever need</h1>
+      <TextWrapperStyled>
+        <h2 className='big-text'>{bigText}</h2>
+        <p className='small-text'>{smallText}</p>
+      </TextWrapperStyled>
+      <GetReservationWrapperStyled>
+        <GetReservation />
+      </GetReservationWrapperStyled>
+    </Wrapper>
+  </BannerStyled>
+);
 
 const BannerStyled = styled.div`
   position: relative;

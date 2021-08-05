@@ -1,11 +1,11 @@
 import { FC } from 'react';
 
-interface ISend {
+export type Icon = {
   size?: number;
   color?: string;
 }
 
-export const SendIcon: FC<ISend> = ({ size, color }) => (
+export const SendIcon: FC<Icon> = ({ size, color }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width={size}
@@ -21,9 +21,9 @@ export const SendIcon: FC<ISend> = ({ size, color }) => (
         transform='translate(9 1.818)'
         fill='none'
         stroke='#fff'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='2'
       />
       <path
         id='Path_2'
@@ -31,9 +31,9 @@ export const SendIcon: FC<ISend> = ({ size, color }) => (
         d='M17.818,2,12.282,17.818,9.118,10.7,2,7.536Z'
         fill='none'
         stroke='#fff'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='2'
       />
     </g>
   </svg>
