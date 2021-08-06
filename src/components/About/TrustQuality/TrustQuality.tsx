@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
-import Button from '../../UI/Button';
-import Icon from '../../UI/icons/Icon';
+import Button from '../../../UI/Button';
+import Icon from '../../../UI/icons/Icon';
 
 const TrastQuality: FC = () => (
   <TrastQualityStyled>

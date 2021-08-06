@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
-import Icon from '../../UI/icons/Icon';
+import Icon from '../../../UI/icons/Icon';
 
 export type SlideItem = {
   id?: number;

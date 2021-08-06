@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
 import Slider from 'react-slick';
-import Wrapper from '../../UI/Wrapper';
-import backgroundSlider from '../../assets/img/about/slider-background.jpg';
+import Wrapper from '../../../UI/Wrapper';
+import backgroundSlider from '../../../assets/img/about/slider-background.jpg';
 import SliderItem, { SlideItem } from './SliderItem';
 import NextArrow from './Arrows/NextArrow';
 import PrevArrow from './Arrows/PrevArrow';

@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
-import image1 from '../../assets/img/about/rhema-kallianpur-jbJ-_hw2yag-unsplash.jpg';
-import image2 from '../../assets/img/about/chelsea-gates-0653_wY0nRc-unsplash.jpg';
-import image3 from '../../assets/img/about/eddi-aguirre-ZAVHbpOn4Jk-unsplash.jpg';
+import image1 from '../../../assets/img/about/rhema-kallianpur-jbJ-_hw2yag-unsplash.jpg';
+import image2 from '../../../assets/img/about/chelsea-gates-0653_wY0nRc-unsplash.jpg';
+import image3 from '../../../assets/img/about/eddi-aguirre-ZAVHbpOn4Jk-unsplash.jpg';
 
 const TrustQualityGallery: FC = () => (
   <TrustQualityGalleryStyled>

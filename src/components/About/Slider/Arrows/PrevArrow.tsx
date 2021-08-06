@@ -1,30 +1,30 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
-import Icon from '../../../UI/icons/Icon';
+import Icon from '../../../../UI/icons/Icon';
 
-const NextArrow: FC = (props) => {
+const PrevArrow: FC = (props) => {
   const { onClick } = props as any;
   return (
-    <NextArrowStyled onClick={onClick}>
-      <Icon name='arrow-right' color='#ffffff' size={10} />
-    </NextArrowStyled>
+    <PrevArrowStyled onClick={onClick}>
+      <Icon name='arrow-left' color='#fff' size={10} />
+    </PrevArrowStyled>
   );
 };
 
-const NextArrowStyled = styled.button`
+const PrevArrowStyled = styled.button`
   padding: ${({ theme }) => theme.sizes.sm(25)}vw;
   background: rgba(0, 0, 0, 0.5);
   transition: all 0.5s;
   border: none;
   position: absolute;
   bottom: 0%;
-  right: 50%;
-  transform: translate(100%, 100%);
+  left: 50%;
+  transform: translate(-100%, 100%);
 
   ${({ theme }) => theme.media(1)} {
     padding: ${({ theme }) => theme.sizes.md(25)}vw;
-    right: -${({ theme }) => theme.sizes.md(100)}vw;
-    transform: translate(0, -50%);
+    left: -${({ theme }) => theme.sizes.md(100)}vw;
+    transform: translate(0px, -50%);
     top: 50%;
     bottom: auto;
   }
@@ -34,4 +34,4 @@ const NextArrowStyled = styled.button`
   }
 `;
 
-export default NextArrow;
+export default PrevArrow;
