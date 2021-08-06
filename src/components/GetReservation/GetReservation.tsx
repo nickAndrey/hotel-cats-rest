@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
 import Button from '../../UI/Button';
-import { SendIcon } from '../../UI/icons/SendIcon';
+import Icon from '../../UI/icons/Icon';
 
 const GetReservation: FC = () => (
   <GetReservationStyled>
@@ -18,7 +18,7 @@ const GetReservation: FC = () => (
       <Input type='text' placeholder='rooms' id='id_rooms' />
     </div>
     <div className='column'>
-      <Button icon={<SendIcon size={14} />} />
+      <Button icon={<Icon name='send' size={14} color='#ffffff' />} />
     </div>
   </GetReservationStyled>
 );

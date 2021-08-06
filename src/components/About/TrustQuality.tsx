@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
 import Button from '../../UI/Button';
-import ArrowRight from '../../UI/icons/ArrowRight';
+import Icon from '../../UI/icons/Icon';
 
 const TrastQuality: FC = () => (
   <TrastQualityStyled>
@@ -18,7 +18,10 @@ const TrastQuality: FC = () => (
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       commodo consequat.
     </p>
-    <Button icon={<ArrowRight color='#ffffff' size={14} />} iconPos='right'>
+    <Button
+      icon={<Icon name='arrow-right' color='#ffffff' size={14} />}
+      iconPos='right'
+    >
       read more
     </Button>
   </TrastQualityStyled>
