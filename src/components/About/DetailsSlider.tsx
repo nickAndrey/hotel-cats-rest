@@ -47,6 +47,15 @@ const DetailsSlider: FC = () => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (

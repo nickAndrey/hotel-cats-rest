@@ -17,12 +17,16 @@ const NextArrowStyled = styled.button`
   transition: all 0.5s;
   border: none;
   position: absolute;
+  bottom: 0%;
+  right: 50%;
+  transform: translate(100%, 100%);
 
   ${({ theme }) => theme.media(1)} {
     padding: ${({ theme }) => theme.sizes.md(25)}vw;
     right: -${({ theme }) => theme.sizes.md(100)}vw;
-    transform: translate(0px, -50%);
+    transform: translate(0, -50%);
     top: 50%;
+    bottom: auto;
   }
 
   &:hover {
