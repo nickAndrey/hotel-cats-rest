@@ -6,6 +6,7 @@ import Banner from './components/Banner/Banner';
 import About from './components/About/About';
 import Restaurant from './components/Restaurant/Restaurant';
 import Blog from './components/Blog/Blog';
+import Photos from './components/Photos/Photos';
 
 const App: FC = () => (
   <ThemeProvider theme={theme}>
@@ -16,6 +17,7 @@ const App: FC = () => (
     <About />
     <Restaurant />
     <Blog />
+    <Photos />
   </ThemeProvider>
 );
 
