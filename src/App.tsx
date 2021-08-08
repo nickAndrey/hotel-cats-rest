@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Restaurant from './components/Restaurant/Restaurant';
 import Blog from './components/Blog/Blog';
 import Photos from './components/Photos/Photos';
+import Footer from './components/Footer/Footer';
 
 const App: FC = () => (
   <ThemeProvider theme={theme}>
@@ -18,6 +19,7 @@ const App: FC = () => (
     <Restaurant />
     <Blog />
     <Photos />
+    <Footer />
   </ThemeProvider>
 );
 
