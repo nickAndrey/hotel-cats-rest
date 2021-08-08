@@ -9,7 +9,9 @@ export type FoodCardType = {
   foodTypeLink?: string;
   foodName: string;
   foodDescription: string;
-  linkToFood: string;
+  linkToFood?: string;
+  noLink?: boolean;
+  viewAs?: 'column' | 'row';
 };
 
 const FoodCard: FC<FoodCardType> = ({
@@ -19,8 +21,10 @@ const FoodCard: FC<FoodCardType> = ({
   foodName,
   foodDescription,
   linkToFood,
+  noLink = false,
+  viewAs,
 }) => (
-  <FoodCardStyled>
+  <FoodCardStyled viewAs={viewAs}>
     <div className='card-image__wrapper'>
       <img src={foodImg} alt={foodName} />
     </div>
@@ -31,21 +35,25 @@ const FoodCard: FC<FoodCardType> = ({
       <h4 className='card-title'>{foodName}</h4>
       <p className='card-description'>{foodDescription}</p>
     </div>
-    <a className='go-to-food__link' href={linkToFood}>
-      <Icon name='arrow-right' color='#ffffff' size={14} />
-    </a>
+    {!noLink && (
+      <a className='go-to-food__link' href={linkToFood}>
+        <Icon name='arrow-right' color='#ffffff' size={14} />
+      </a>
+    )}
   </FoodCardStyled>
 );
 
-const FoodCardStyled = styled.div`
+const FoodCardStyled = styled.div<{ viewAs: FoodCardType['viewAs'] }>`
   display: grid;
   grid-template-columns: 1fr;
   background: ${({ theme }) => theme.colors.grey};
   position: relative;
 
   ${({ theme }) => theme.media(1)} {
-    grid-template-columns: auto 1fr;
-    grid-gap: ${({ theme }) => theme.sizes.md(16)}vw;
+    grid-gap: ${({ theme, viewAs }) =>
+      viewAs && viewAs === 'column' ? 0 : `${theme.sizes.md(16)}vw`};
+    grid-template-columns: ${({ viewAs }) =>
+      viewAs && viewAs === 'column' ? '1fr' : 'auto 1fr'};
   }
 
   .card-image__wrapper img {
@@ -55,7 +63,10 @@ const FoodCardStyled = styled.div`
   }
 
   .card-content__wrapper {
-    padding: ${({ theme }) => `${theme.sizes.sm(37)}vw ${theme.sizes.sm(16)}vw`};
+    padding: ${({ theme }) =>
+      `${theme.sizes.sm(37)}vw ${theme.sizes.sm(16)}vw`};
+    text-align: ${({ viewAs }) =>
+      viewAs && viewAs === 'column' ? 'center' : 'left'};
 
     ${({ theme }) => theme.media(1)} {
       padding: ${({ theme }) => `${theme.sizes.md(37)}vw 0`};

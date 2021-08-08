@@ -5,6 +5,7 @@ import { theme } from './UI/theme';
 import Banner from './components/Banner/Banner';
 import About from './components/About/About';
 import Restaurant from './components/Restaurant/Restaurant';
+import Blog from './components/Blog/Blog';
 
 const App: FC = () => (
   <ThemeProvider theme={theme}>
@@ -14,6 +15,7 @@ const App: FC = () => (
     />
     <About />
     <Restaurant />
+    <Blog />
   </ThemeProvider>
 );
 

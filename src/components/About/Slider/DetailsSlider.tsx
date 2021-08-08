@@ -66,6 +66,7 @@ const DetailsSlider: FC = () => {
           text='We bring you the finest details'
           color='white'
           className='slider-detail__title'
+          maxWidth={376}
         />
         <Slider {...sliderConfig}>
           {sliderData.map((item) => (

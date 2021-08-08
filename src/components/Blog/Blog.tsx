@@ -2,60 +2,75 @@ import { FC } from 'react';
 import ComponentTitle from '../../UI/ComponentTitle';
 import Wrapper from '../../UI/Wrapper';
 import FoodCard, { FoodCardType } from '../Cards/FoodCard';
-import image1 from '../../assets/img/restaurant/food1.jpg';
-import image2 from '../../assets/img/restaurant/food2.jpg';
+import img1 from '../../assets/img/blog/blog-image-1.jpg';
+import img2 from '../../assets/img/blog/blog-image-2.jpg';
+import img3 from '../../assets/img/blog/blog-image-3.jpg';
 import styled from '@emotion/styled';
 
-const Restaurant: FC = () => {
+const Blog: FC = () => {
   const data: FoodCardType[] = [
     {
       id: 0,
-      foodImg: image1,
-      foodType: 'Food',
+      foodImg: img1,
+      foodType: 'Food and life',
       foodTypeLink: '',
-      foodName: 'Fresh fish and onions',
+      foodName: 'Succed in hotel business',
       foodDescription:
         'Fresh food directly from our restaurant ready coocked for you and you familly',
-      linkToFood: '',
     },
     {
       id: 1,
-      foodImg: image2,
-      foodType: 'Desert',
+      foodImg: img2,
+      foodType: 'Cooking',
       foodTypeLink: '',
-      foodName: 'Chocolate cupcakes',
+      foodName: 'Cooking delicious food',
       foodDescription:
         'Fresh food directly from our restaurant ready coocked for you and you familly',
-      linkToFood: '',
     },
     {
       id: 2,
-      foodImg: image2,
-      foodType: 'Desert',
+      foodImg: img3,
+      foodType: 'Fruits',
       foodTypeLink: '',
-      foodName: 'Chocolate cupcakes',
+      foodName: 'Getting fresh fruits',
       foodDescription:
         'Fresh food directly from our restaurant ready coocked for you and you familly',
-      linkToFood: '',
     },
     {
       id: 3,
-      foodImg: image1,
-      foodType: 'Food',
+      foodImg: img3,
+      foodType: 'Fruits',
       foodTypeLink: '',
-      foodName: 'Fresh fish and onions',
+      foodName: 'Getting fresh fruits',
       foodDescription:
         'Fresh food directly from our restaurant ready coocked for you and you familly',
-      linkToFood: '',
+    },
+    {
+      id: 4,
+      foodImg: img2,
+      foodType: 'Cooking',
+      foodTypeLink: '',
+      foodName: 'Cooking delicious food',
+      foodDescription:
+        'Fresh food directly from our restaurant ready coocked for you and you familly',
+    },
+    {
+      id: 5,
+      foodImg: img1,
+      foodType: 'Food and life',
+      foodTypeLink: '',
+      foodName: 'Succed in hotel business',
+      foodDescription:
+        'Fresh food directly from our restaurant ready coocked for you and you familly',
     },
   ];
 
   return (
     <Wrapper>
       <ComponentTitle
-        text='Explore our menu and eat what you want'
-        mt={111}
-        maxWidth={498}
+        text='Read our newest blog post right away'
+        maxWidth={465}
+        mt={110}
       />
       <CardsGridStyled>
         {data.map(
@@ -66,7 +81,6 @@ const Restaurant: FC = () => {
             foodTypeLink,
             foodName,
             foodDescription,
-            linkToFood,
           }) => (
             <FoodCard
               key={id}
@@ -75,8 +89,8 @@ const Restaurant: FC = () => {
               foodTypeLink={foodTypeLink}
               foodName={foodName}
               foodDescription={foodDescription}
-              linkToFood={linkToFood}
-              viewAs='row'
+              noLink={true}
+              viewAs='column'
             />
           )
         )}
@@ -92,10 +106,10 @@ const CardsGridStyled = styled.div`
   margin-top: ${({ theme }) => theme.sizes.sm(50)}vw;
 
   ${({ theme }) => theme.media(1)} {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: ${({ theme }) => theme.sizes.md(16)}vw;
     margin-top: ${({ theme }) => theme.sizes.md(50)}vw;
   }
 `;
 
-export default Restaurant;
+export default Blog;
