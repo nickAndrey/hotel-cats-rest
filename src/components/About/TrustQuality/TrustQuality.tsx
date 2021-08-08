@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
 import Button from '../../../UI/Button';
+import ComponentTitle from '../../../UI/ComponentTitle';
 import Icon from '../../../UI/icons/Icon';
 
 const TrastQuality: FC = () => (
   <TrastQualityStyled>
-    <h2 className='title'>Trust and quality are our atuus</h2>
+    <ComponentTitle text='Trust and quality are our atuus' />
     <p className='medium-text'>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim

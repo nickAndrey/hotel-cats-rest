@@ -6,6 +6,7 @@ import backgroundSlider from '../../../assets/img/about/slider-background.jpg';
 import SliderItem, { SlideItem } from './SliderItem';
 import NextArrow from './Arrows/NextArrow';
 import PrevArrow from './Arrows/PrevArrow';
+import ComponentTitle from '../../../UI/ComponentTitle';
 
 const DetailsSlider: FC = () => {
   const sliderData: SlideItem[] = [
@@ -61,9 +62,11 @@ const DetailsSlider: FC = () => {
   return (
     <DetailsSliderStyled>
       <Wrapper>
-        <h4 className='slider-detail__title'>
-          We bring you the finest details
-        </h4>
+        <ComponentTitle
+          text='We bring you the finest details'
+          color='white'
+          className='slider-detail__title'
+        />
         <Slider {...sliderConfig}>
           {sliderData.map((item) => (
             <SliderItem
@@ -103,15 +106,8 @@ const DetailsSliderStyled = styled.div`
   }
 
   .slider-detail__title {
-    font-size: ${({ theme }) => theme.sizes.sm(42)}vw;
-    line-height: ${({ theme }) => theme.sizes.sm(56)}vw;
     margin: 0 0 ${({ theme }) => theme.sizes.sm(34)}vw 0;
-    color: ${({ theme }) => theme.colors.white};
-    font-weight: 800;
-
     ${({ theme }) => theme.media(1)} {
-      font-size: ${({ theme }) => theme.sizes.md(42)}vw;
-      line-height: ${({ theme }) => theme.sizes.md(56)}vw;
       margin: 0 0 ${({ theme }) => theme.sizes.md(34)}vw 0;
     }
   }

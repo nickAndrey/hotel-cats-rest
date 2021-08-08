@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 import Wrapper from '../../UI/Wrapper';
 import DetailsSlider from './Slider/DetailsSlider';
+import Testimonials from './Testimonials/Testimonials';
 import TrastQuality from './TrustQuality/TrustQuality';
 import TrustQualityGallery from './TrustQuality/TrustQualityGallery';
 
@@ -14,6 +15,7 @@ const About: FC = () => (
       </div>
     </Wrapper>
     <DetailsSlider />
+    <Testimonials />
   </AboutStyled>
 );
 
