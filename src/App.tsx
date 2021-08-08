@@ -4,6 +4,7 @@ import './App.css';
 import { theme } from './UI/theme';
 import Banner from './components/Banner/Banner';
 import About from './components/About/About';
+import Restaurant from './components/Restaurant/Restaurant';
 
 const App: FC = () => (
   <ThemeProvider theme={theme}>
@@ -12,6 +13,7 @@ const App: FC = () => (
       smallText='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
     />
     <About />
+    <Restaurant />
   </ThemeProvider>
 );
 
