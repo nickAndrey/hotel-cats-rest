@@ -117,15 +117,15 @@ const FooterStyled = styled.footer`
           height: ${({ theme }) => theme.sizes.md(35)}vw;
         }
 
-        &:nth-child(1) {
+        &:nth-of-type(1) {
           background: #3b5998;
         }
 
-        &:nth-child(2) {
+        &:nth-of-type(2) {
           background: #55acee;
         }
 
-        &:nth-child(3) {
+        &:nth-of-type(3) {
           background: #dc4e41;
         }
 
