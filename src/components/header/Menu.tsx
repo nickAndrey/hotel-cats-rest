@@ -1,32 +1,33 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 const Menu: FC = () => {
   const data: { [key: string]: any }[] = [
     {
       id: 0,
       label: 'home',
-      anchor: '',
+      anchor: '/',
     },
     {
       id: 1,
       label: 'rooms',
-      anchor: '',
+      anchor: '/rooms',
     },
     {
       id: 2,
       label: 'restaurant',
-      anchor: '',
+      anchor: '/restaurant',
     },
     {
       id: 3,
       label: 'about us',
-      anchor: '',
+      anchor: '/about',
     },
     {
       id: 4,
       label: 'contact',
-      anchor: '',
+      anchor: '/contact',
     },
   ];
 
@@ -36,7 +37,7 @@ const Menu: FC = () => {
       <MenuListStyled>
         {data.map(({ id, label, anchor }) => (
           <li key={id}>
-            <ListItemLink href={anchor}>{label}</ListItemLink>
+            <ListItemLink to={anchor}>{label}</ListItemLink>
           </li>
         ))}
       </MenuListStyled>
@@ -75,7 +76,7 @@ const HomeLinkItem = styled.a`
   text-decoration: none;
 `;
 
-const ListItemLink = styled.a`
+const ListItemLink = styled(Link)`
   font-size: ${({ theme }) => theme.sizes.md(12)}vw;
   line-height: ${({ theme }) => theme.sizes.md(8)}vw;
   color: ${({ theme }) => theme.colors.white};

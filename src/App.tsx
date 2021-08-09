@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { ThemeProvider } from '@emotion/react';
 import './App.css';
 import { theme } from './UI/theme';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Rooms from './pages/Rooms';
 
