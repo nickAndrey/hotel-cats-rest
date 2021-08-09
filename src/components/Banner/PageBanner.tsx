@@ -9,12 +9,18 @@ import { Link } from 'react-router-dom';
 type PageBannerType = {
   bannerTitle: string;
   currentURL: string;
+  pageTitle: string;
 };
 
-const PageBanner: FC<PageBannerType> = ({ bannerTitle, currentURL }) => (
+const PageBanner: FC<PageBannerType> = ({
+  bannerTitle,
+  currentURL,
+  pageTitle,
+}) => (
   <PageBannerStyled>
     <img className='image' src={banner} alt='hotel rooms' />
     <Wrapper>
+      <h1 className='visually-hidden'>{pageTitle}</h1>
       <Menu />
       <ComponentTitle text={bannerTitle} color='white' mt={96} />
       <BreadCrumbs>

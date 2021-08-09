@@ -10,7 +10,11 @@ import Wrapper from '../UI/Wrapper';
 
 const Rooms: FC = () => (
   <RoomsStyled>
-    <PageBanner bannerTitle='Rooms' currentURL='/rooms' />
+    <PageBanner
+      bannerTitle='Rooms'
+      currentURL='/rooms'
+      pageTitle='rooms in hotel'
+    />
     <Wrapper>
       <ComponentTitle
         text='Trust and quality are our atuus'

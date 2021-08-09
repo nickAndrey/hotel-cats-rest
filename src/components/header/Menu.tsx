@@ -33,7 +33,7 @@ const Menu: FC = () => {
 
   return (
     <MenuStyled>
-      <HomeLinkItem href='/'>Cat's Rest Hotel</HomeLinkItem>
+      <HomeLinkItem to='/'>Cat's Rest Hotel</HomeLinkItem>
       <MenuListStyled>
         {data.map(({ id, label, anchor }) => (
           <li key={id}>
@@ -67,7 +67,7 @@ const MenuListStyled = styled.ul`
   }
 `;
 
-const HomeLinkItem = styled.a`
+const HomeLinkItem = styled(Link)`
   text-transform: capitalize;
   font-weight: bolder;
   font-size: ${({ theme }) => theme.sizes.md(14)}vw;
