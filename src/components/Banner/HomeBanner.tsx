@@ -5,13 +5,13 @@ import bannerBackground from '../../assets/img/banner-background.jpg';
 import Menu from '../header/Menu';
 import GetReservation from '../GetReservation/GetReservation';
 
-interface IBanner {
+type HomeBannerType = {
   bigText: string;
   smallText: string;
-}
+};
 
-const Banner: FC<IBanner> = ({ bigText, smallText }) => (
-  <BannerStyled>
+const HomeBanner: FC<HomeBannerType> = ({ bigText, smallText }) => (
+  <HomeBannerStyled>
     <img
       className='image'
       src={bannerBackground}
@@ -28,10 +28,10 @@ const Banner: FC<IBanner> = ({ bigText, smallText }) => (
         <GetReservation />
       </GetReservationWrapperStyled>
     </Wrapper>
-  </BannerStyled>
+  </HomeBannerStyled>
 );
 
-const BannerStyled = styled.div`
+const HomeBannerStyled = styled.div`
   position: relative;
   padding-bottom: ${({ theme }) => theme.sizes.sm(209)}vw;
 
@@ -93,4 +93,4 @@ const GetReservationWrapperStyled = styled.div`
   }
 `;
 
-export default Banner;
+export default HomeBanner;
