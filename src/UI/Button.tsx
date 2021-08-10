@@ -22,6 +22,8 @@ const ButtonStyled = styled.button<{ iconPos: ButtonType['iconPos'] }>`
 
   ${({ theme }) => theme.media(1)} {
     padding: ${({ theme: { sizes } }) => sizes.md(21)}vw;
+    font-size: ${({ theme }) => theme.sizes.md(14)}vw;
+    line-height: ${({ theme }) => theme.sizes.md(21)}vw;
   }
 
   .text-content {
@@ -32,12 +34,13 @@ const ButtonStyled = styled.button<{ iconPos: ButtonType['iconPos'] }>`
 
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: ${({ iconPos }) =>
     iconPos === 'left' ? 'row' : 'row-reverse'};
 
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
+  font-weight: 400;
+  font-size: ${({ theme }) => theme.sizes.sm(14)}vw;
+  line-height: ${({ theme }) => theme.sizes.sm(21)}vw;
   margin: 0;
   overflow: visible;
   text-transform: none;
