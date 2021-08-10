@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Rooms from './pages/Rooms';
 import NotFound from './pages/NotFound';
 import Restaurant from './pages/Restaurant';
+import AboutUs from './pages/AboutUs';
 
 const App: FC = () => (
   <ThemeProvider theme={theme}>
@@ -15,6 +16,7 @@ const App: FC = () => (
         <Route exact path='/' component={Home} />
         <Route path='/rooms' component={Rooms} />
         <Route path='/restaurant' component={Restaurant} />
+        <Route path='/about' component={AboutUs} />
         <Route path='*' component={NotFound} />
       </Switch>
     </Router>
