@@ -28,8 +28,8 @@ const Restaurant: FC = () => (
         maxWidth={498}
       />
       <RestaurantGrid />
+      <GetReservation mt={90} />
     </Wrapper>
-    <GetReservation mt={90} />
     <Photos />
     <Footer />
   </RestaurantStyled>
