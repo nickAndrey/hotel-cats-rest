@@ -3,8 +3,12 @@ import { FC } from 'react';
 import Button from '../../UI/Button';
 import Icon from '../../UI/icons/Icon';
 
-const GetReservation: FC = () => (
-  <GetReservationStyled>
+type GetReservationType = {
+  mt?: number;
+};
+
+const GetReservation: FC<GetReservationType> = ({ mt }) => (
+  <GetReservationStyled mt={mt}>
     <div className='column'>
       <label htmlFor='id_check_in_date'>Check In Date</label>
       <Input type='text' placeholder='check in date' id='id_check_in_date' />
@@ -23,8 +27,9 @@ const GetReservation: FC = () => (
   </GetReservationStyled>
 );
 
-const GetReservationStyled = styled.div`
+const GetReservationStyled = styled.div<GetReservationType>`
   padding: ${({ theme }) => `${theme.sizes.sm(32)}vw ${theme.sizes.sm(92)}vw`};
+  margin-top: ${({ theme, mt }) => (mt ? `${theme.sizes.sm(mt)}vw` : 0)};
   box-shadow: 0px 0px 14px 1px ${({ theme }) => theme.colors.grey3};
   background: ${({ theme }) => theme.colors.white};
   display: grid;
@@ -35,6 +40,7 @@ const GetReservationStyled = styled.div`
   ${({ theme }) => theme.media(1)} {
     grid-template-columns: repeat(3, 1fr) auto;
     grid-gap: ${({ theme }) => theme.sizes.md(16)}vw;
+    margin-top: ${({ theme, mt }) => (mt ? `${theme.sizes.md(mt)}vw` : 0)};
     padding: ${({ theme }) =>
       `${theme.sizes.md(32)}vw ${theme.sizes.md(92)}vw`};
   }

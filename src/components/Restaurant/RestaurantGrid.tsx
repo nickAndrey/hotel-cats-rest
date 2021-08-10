@@ -1,12 +1,10 @@
 import { FC } from 'react';
-import ComponentTitle from '../../UI/ComponentTitle';
-import Wrapper from '../../UI/Wrapper';
 import FoodCard, { FoodCardType } from '../Cards/FoodCard';
 import image1 from '../../assets/img/restaurant/food1.jpg';
 import image2 from '../../assets/img/restaurant/food2.jpg';
-import styled from '@emotion/styled';
+import CardsGrid from '../Cards/CardsGrid';
 
-const Restaurant: FC = () => {
+const RestaurantGrid: FC = () => {
   const data: FoodCardType[] = [
     {
       id: 0,
@@ -51,51 +49,31 @@ const Restaurant: FC = () => {
   ];
 
   return (
-    <Wrapper>
-      <ComponentTitle
-        text='Explore our menu and eat what you want'
-        mt={111}
-        maxWidth={498}
-      />
-      <CardsGridStyled>
-        {data.map(
-          ({
-            id,
-            foodImg,
-            foodType,
-            foodTypeLink,
-            foodName,
-            foodDescription,
-            linkToFood,
-          }) => (
-            <FoodCard
-              key={id}
-              foodImg={foodImg}
-              foodType={foodType}
-              foodTypeLink={foodTypeLink}
-              foodName={foodName}
-              foodDescription={foodDescription}
-              linkToFood={linkToFood}
-              viewAs='row'
-            />
-          )
-        )}
-      </CardsGridStyled>
-    </Wrapper>
+    <CardsGrid columns={2}>
+      {data.map(
+        ({
+          id,
+          foodImg,
+          foodType,
+          foodTypeLink,
+          foodName,
+          foodDescription,
+          linkToFood,
+        }) => (
+          <FoodCard
+            key={id}
+            foodImg={foodImg}
+            foodType={foodType}
+            foodTypeLink={foodTypeLink}
+            foodName={foodName}
+            foodDescription={foodDescription}
+            linkToFood={linkToFood}
+            viewAs='row'
+          />
+        )
+      )}
+    </CardsGrid>
   );
 };
 
-const CardsGridStyled = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: ${({ theme }) => theme.sizes.sm(16)}vw;
-  margin-top: ${({ theme }) => theme.sizes.sm(50)}vw;
-
-  ${({ theme }) => theme.media(1)} {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: ${({ theme }) => theme.sizes.md(16)}vw;
-    margin-top: ${({ theme }) => theme.sizes.md(50)}vw;
-  }
-`;
-
-export default Restaurant;
+export default RestaurantGrid;
