@@ -4,10 +4,11 @@ import { FC } from 'react';
 type ButtonType = {
   icon?: any;
   iconPos?: 'left' | 'right';
+  onClick?: any;
 };
 
-const Button: FC<ButtonType> = ({ icon, children, iconPos }) => (
-  <ButtonStyled iconPos={iconPos}>
+const Button: FC<ButtonType> = ({ icon, children, iconPos, onClick }) => (
+  <ButtonStyled iconPos={iconPos} onClick={onClick}>
     {icon && icon}
     <span className='text-content'>{children}</span>
   </ButtonStyled>

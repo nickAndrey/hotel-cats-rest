@@ -4,21 +4,17 @@ import Button from '../../../UI/Button';
 import ComponentTitle from '../../../UI/ComponentTitle';
 import Icon from '../../../UI/icons/Icon';
 
-const TrastQuality: FC = () => (
+type TrastQualityType = {
+  title: string;
+  text1: string;
+  text2: string;
+};
+
+const TrastQuality: FC<TrastQualityType> = ({ title, text1, text2 }) => (
   <TrastQualityStyled>
-    <ComponentTitle text='Trust and quality are our atuus' />
-    <p className='medium-text'>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
-    </p>
-    <p className='regular-text'>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
-    </p>
+    <ComponentTitle text={title} />
+    <p className='medium-text'>{text1}</p>
+    <p className='regular-text'>{text2}</p>
     <Button
       icon={<Icon name='arrow-right' color='#ffffff' size={14} />}
       iconPos='right'

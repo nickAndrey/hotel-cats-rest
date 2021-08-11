@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 import Wrapper from '../../UI/Wrapper';
 import bannerBackground from '../../assets/img/banner-background.jpg';
-import Menu from '../header/Menu';
 import GetReservation from '../GetReservation/GetReservation';
+import Menu from '../header/Menu';
 
 type HomeBannerType = {
   bigText: string;
