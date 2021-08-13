@@ -63,6 +63,14 @@ const SliderWrapper = styled.div`
     max-width: 100%;
     height: auto;
   }
+
+  .slick-slide > div {
+    height: ${({ theme }) => theme.sizes.sm(300)}vw;
+
+    ${({ theme }) => theme.media(1)} {
+      height: ${({ theme }) => theme.sizes.md(340)}vw;
+    }
+  }
 `;
 
 export default Photos;
